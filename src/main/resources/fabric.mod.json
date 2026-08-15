@@ -5,13 +5,14 @@
   "name": "Create: Bells & Whistles",
   "description": "Create: Bells & Whistles port for Create Fly 26.2. Decorative train and station blocks for the Create mod.",
   "authors": [
-    "lev"
+    "lev",
+    "chaevsfe"
   ],
   "contributors": [
     "chaevsfe"
   ],
   "contact": {
-    "homepage": "https://github.com/chaevsfe/BellsAndWhistlesMod",
+    "homepage": "https://modrinth.com/mod/create-bells-whistles",
     "sources": "https://github.com/chaevsfe/BellsAndWhistlesMod",
     "issues": "https://github.com/chaevsfe/BellsAndWhistlesMod/issues"
   },
