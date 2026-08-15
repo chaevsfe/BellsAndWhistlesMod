@@ -5,11 +5,10 @@
     "###"
   ],
   "key": {
-    "#": {
-      "item": "create:andesite_alloy"
-    }
+    "#": "create:andesite_alloy"
   },
-  "result":{"id": "bellsandwhistles:andesite_door_step",
+  "result": {
+    "id": "bellsandwhistles:andesite_door_step",
     "count": 8
   }
 }

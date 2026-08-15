@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "tag": "c:ingots/copper"
-  },
+  "ingredient": "#c:ingots/copper",
   "result": {
     "count": 3,
     "id": "bellsandwhistles:copper_bogie_steps"

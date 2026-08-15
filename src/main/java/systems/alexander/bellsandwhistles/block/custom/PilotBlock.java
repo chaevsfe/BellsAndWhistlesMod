@@ -1,15 +1,17 @@
 package systems.alexander.bellsandwhistles.block.custom;
 
-import com.simibubi.create.content.equipment.wrench.IWrenchable;
+import com.zurrtum.create.content.equipment.wrench.IWrenchable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -17,8 +19,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.stream.Stream;
 
-public class PilotBlock extends Block implements IWrenchable{
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+public class PilotBlock extends Block implements IWrenchable {
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
+
     public PilotBlock(Properties properties) {
         super(properties);
     }
@@ -29,12 +32,12 @@ public class PilotBlock extends Block implements IWrenchable{
     }
 
     @Override
-    public BlockState rotate(BlockState pState, Rotation pRotation) {
+    protected BlockState rotate(BlockState pState, Rotation pRotation) {
         return pState.setValue(FACING, pRotation.rotate(pState.getValue(FACING)));
     }
 
     @Override
-    public BlockState mirror(BlockState pState, Mirror pMirror) {
+    protected BlockState mirror(BlockState pState, Mirror pMirror) {
         return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
     }
 
@@ -42,13 +45,17 @@ public class PilotBlock extends Block implements IWrenchable{
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(FACING);
     }
-    public float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+
+    @Override
+    protected float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         return 1.0F;
     }
 
-    public boolean propagatesSkylightDown(BlockState pState, BlockGetter pReader, BlockPos pPos) {
+    @Override
+    protected boolean propagatesSkylightDown(BlockState pState) {
         return true;
     }
+
     private static final VoxelShape SHAPE = Stream.of(
             Block.box(0.25, -11, 3, 16.25, 5, 19),
             Block.box(16.25, -11, 10, 22.25, 5, 19),
@@ -72,9 +79,10 @@ public class PilotBlock extends Block implements IWrenchable{
 
         return buffer[0];
     }
+
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        switch ((Direction)pState.getValue(FACING)) {
+    protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        switch (pState.getValue(FACING)) {
             case NORTH:
                 return SHAPE;
             case SOUTH:

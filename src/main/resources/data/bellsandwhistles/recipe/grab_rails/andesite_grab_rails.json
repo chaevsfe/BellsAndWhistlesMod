@@ -7,11 +7,10 @@
     "# #"
   ],
   "key": {
-    "#": {
-      "item": "create:andesite_alloy"
-    }
+    "#": "create:andesite_alloy"
   },
-  "result":{"id": "bellsandwhistles:andesite_grab_rails",
+  "result": {
+    "id": "bellsandwhistles:andesite_grab_rails",
     "count": 8
   }
 }

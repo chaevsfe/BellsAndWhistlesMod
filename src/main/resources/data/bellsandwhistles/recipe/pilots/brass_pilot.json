@@ -1,19 +1,16 @@
 {
-  "type":"minecraft:crafting_shaped",
-  
+  "type": "minecraft:crafting_shaped",
   "group": "pilots",
   "pattern": [
     " I ",
     "# #",
     "III"
   ],
-  "key":{
-    "#":{
-      "item":"create:brass_sheet"
-    },
-    "I":{
-      "item":"create:brass_nugget"
-    }
+  "key": {
+    "#": "create:brass_sheet",
+    "I": "create:brass_nugget"
   },
-  "result":{"id":"bellsandwhistles:brass_pilot"}
+  "result": {
+    "id": "bellsandwhistles:brass_pilot"
+  }
 }

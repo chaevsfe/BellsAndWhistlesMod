@@ -1,19 +1,16 @@
 {
-  "type":"minecraft:crafting_shaped",
-  
+  "type": "minecraft:crafting_shaped",
   "group": "stone_pilots",
   "pattern": [
     " I ",
     "# #",
     "#I#"
   ],
-  "key":{
-    "#":{
-      "item":"create:polished_cut_granite"
-    },
-    "I":{
-      "item":"create:polished_cut_granite_stairs"
-    }
+  "key": {
+    "#": "create:polished_cut_granite",
+    "I": "create:polished_cut_granite_stairs"
   },
-  "result":{"id":"bellsandwhistles:polished_granite_pilot"}
+  "result": {
+    "id": "bellsandwhistles:polished_granite_pilot"
+  }
 }

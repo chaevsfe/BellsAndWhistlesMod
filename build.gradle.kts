@@ -49,10 +49,10 @@ tasks.processResources {
     inputs.property("version", version)
     filesMatching("fabric.mod.json") {
         expand(
-            "version" to version,
-            "minecraft_dependency_version" to property("minecraft_dependency_version"),
-            "fabric_loader_version" to property("fabric_loader_version"),
-            "create_fabric_version_range" to property("create_fabric_version_range"),
+            "version" to project.version.toString(),
+            "minecraft_dependency_version" to project.property("minecraft_dependency_version") as String,
+            "fabric_loader_version" to project.property("fabric_loader_version") as String,
+            "create_fabric_version_range" to project.property("create_fabric_version_range") as String,
         )
     }
 }

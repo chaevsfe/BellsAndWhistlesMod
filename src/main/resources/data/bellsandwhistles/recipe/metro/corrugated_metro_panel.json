@@ -1,12 +1,13 @@
 {
-  "type":"minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shaped",
   "pattern": [
     "###"
   ],
-  "key":{
-    "#":{
-      "item":"bellsandwhistles:corrugated_metro_casing"
-    }
+  "key": {
+    "#": "bellsandwhistles:corrugated_metro_casing"
   },
-  "result":{"id":"bellsandwhistles:corrugated_metro_panel", "count":  16}
+  "result": {
+    "id": "bellsandwhistles:corrugated_metro_panel",
+    "count": 16
+  }
 }

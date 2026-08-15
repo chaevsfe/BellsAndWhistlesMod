@@ -1,14 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "create:iron_sheet"
-    },
-    {
-      "item": "minecraft:green_dye"
-    }
+    "create:iron_sheet",
+    "minecraft:green_dye"
   ],
-  "result":{"id": "bellsandwhistles:metro_casing",
+  "result": {
+    "id": "bellsandwhistles:metro_casing",
     "count": 4
   }
 }

@@ -17,5 +17,5 @@
       ]
     }
   ],
-  "random_sequence": "minecraft:blocks/station_platform"
+  "random_sequence": "bellsandwhistles:blocks/station_platform"
 }

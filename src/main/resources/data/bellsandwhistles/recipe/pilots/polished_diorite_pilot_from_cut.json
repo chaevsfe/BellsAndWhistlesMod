@@ -1,19 +1,16 @@
 {
-  "type":"minecraft:crafting_shaped",
-  
+  "type": "minecraft:crafting_shaped",
   "group": "stone_pilots",
   "pattern": [
     " I ",
     "# #",
     "#I#"
   ],
-  "key":{
-    "#":{
-      "item":"create:polished_cut_diorite"
-    },
-    "I":{
-      "item":"create:polished_cut_diorite_stairs"
-    }
+  "key": {
+    "#": "create:polished_cut_diorite",
+    "I": "create:polished_cut_diorite_stairs"
   },
-  "result":{"id":"bellsandwhistles:polished_diorite_pilot"}
+  "result": {
+    "id": "bellsandwhistles:polished_diorite_pilot"
+  }
 }

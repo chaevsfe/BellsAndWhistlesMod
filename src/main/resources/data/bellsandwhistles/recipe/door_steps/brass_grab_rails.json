@@ -5,14 +5,11 @@
     "#I#"
   ],
   "key": {
-    "#": {
-      "tag": "c:ingots/brass"
-    },
-    "I": {
-      "tag": "c:nuggets/brass"
-    }
+    "#": "#c:ingots/brass",
+    "I": "#c:nuggets/brass"
   },
-  "result":{"id": "bellsandwhistles:brass_door_step",
+  "result": {
+    "id": "bellsandwhistles:brass_door_step",
     "count": 8
   }
 }

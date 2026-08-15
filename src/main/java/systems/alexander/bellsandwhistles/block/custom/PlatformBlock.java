@@ -4,20 +4,20 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class PlatformBlock extends Block  {
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+public class PlatformBlock extends Block {
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     public PlatformBlock(Properties properties) {
         super(properties);
@@ -29,28 +29,32 @@ public class PlatformBlock extends Block  {
     }
 
     @Override
-    public BlockState rotate(BlockState pState, Rotation pRotation) {
+    protected BlockState rotate(BlockState pState, Rotation pRotation) {
         return pState.setValue(FACING, pRotation.rotate(pState.getValue(FACING)));
     }
 
     @Override
-    public BlockState mirror(BlockState pState, Mirror pMirror) {
+    protected BlockState mirror(BlockState pState, Mirror pMirror) {
         return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
     }
+
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(FACING);
     }
 
-    public float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+    @Override
+    protected float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         return 1.0F;
     }
 
-    public boolean propagatesSkylightDown(BlockState pState, BlockGetter pReader, BlockPos pPos) {
+    @Override
+    protected boolean propagatesSkylightDown(BlockState pState) {
         return true;
     }
 
     private static final VoxelShape SHAPE = Shapes.join(Block.box(0, 0, 8, 16, 16, 16), Block.box(0, 5, 4, 16, 16, 8), BooleanOp.OR);
+
     public static VoxelShape rotateShape(Direction from, Direction to, VoxelShape shape) {
         VoxelShape[] buffer = new VoxelShape[]{shape, Shapes.empty()};
 
@@ -63,9 +67,10 @@ public class PlatformBlock extends Block  {
 
         return buffer[0];
     }
+
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        switch ((Direction)pState.getValue(FACING)) {
+    protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        switch (pState.getValue(FACING)) {
             case NORTH:
                 return SHAPE;
             case SOUTH:
@@ -77,5 +82,4 @@ public class PlatformBlock extends Block  {
                 return rotateShape(Direction.NORTH, Direction.SOUTH, SHAPE);
         }
     }
-
 }

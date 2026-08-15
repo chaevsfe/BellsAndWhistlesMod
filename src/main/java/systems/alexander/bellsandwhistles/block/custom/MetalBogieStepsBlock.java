@@ -1,12 +1,10 @@
 package systems.alexander.bellsandwhistles.block.custom;
 
-import com.simibubi.create.content.decoration.MetalLadderBlock;
-import com.simibubi.create.content.equipment.wrench.IWrenchable;
+import com.zurrtum.create.content.decoration.MetalLadderBlock;
+import com.zurrtum.create.content.equipment.wrench.IWrenchable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -20,17 +18,15 @@ public class MetalBogieStepsBlock extends MetalLadderBlock implements IWrenchabl
     public MetalBogieStepsBlock(Properties pProperties) {
         super(pProperties);
     }
-    public float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+
+    @Override
+    protected float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         return 1.0F;
     }
 
-    public boolean propagatesSkylightDown(BlockState pState, BlockGetter pReader, BlockPos pPos) {
-        return true;
-    }
-
     @Override
-    public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, LivingEntity entity) {
-        return super.isLadder(state, level, pos, entity);
+    protected boolean propagatesSkylightDown(BlockState pState) {
+        return true;
     }
 
     private static final VoxelShape SHAPE = Stream.of(
@@ -38,6 +34,7 @@ public class MetalBogieStepsBlock extends MetalLadderBlock implements IWrenchabl
             Block.box(1, -3, 12, 15, -2, 16),
             Block.box(3, -9, 12, 13, -8, 16)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
     public static VoxelShape rotateShape(Direction from, Direction to, VoxelShape shape) {
         VoxelShape[] buffer = new VoxelShape[]{shape, Shapes.empty()};
 
@@ -50,9 +47,10 @@ public class MetalBogieStepsBlock extends MetalLadderBlock implements IWrenchabl
 
         return buffer[0];
     }
+
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        switch ((Direction)pState.getValue(FACING)) {
+    protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        switch (pState.getValue(FACING)) {
             case NORTH:
                 return SHAPE;
             case SOUTH:

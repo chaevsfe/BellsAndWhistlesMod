@@ -1,30 +1,29 @@
 package systems.alexander.bellsandwhistles.block.custom;
 
-import com.simibubi.create.content.decoration.MetalLadderBlock;
-import com.simibubi.create.content.equipment.wrench.IWrenchable;
+import com.zurrtum.create.content.decoration.MetalLadderBlock;
+import com.zurrtum.create.content.equipment.wrench.IWrenchable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import java.util.stream.Stream;
 
 public class MetalStepBlock extends MetalLadderBlock implements IWrenchable {
     public MetalStepBlock(Properties pProperties) {
         super(pProperties);
     }
-    public float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+
+    @Override
+    protected float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         return 1.0F;
     }
 
-    public boolean propagatesSkylightDown(BlockState pState, BlockGetter pReader, BlockPos pPos) {
+    @Override
+    protected boolean propagatesSkylightDown(BlockState pState) {
         return true;
     }
 
@@ -32,18 +31,15 @@ public class MetalStepBlock extends MetalLadderBlock implements IWrenchable {
         BlockState blockstate = pBlockReader.getBlockState(pPos);
         return true;
     }
+
     @Override
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
         Direction direction = pState.getValue(FACING);
         return this.canAttachTo(pLevel, pPos.relative(direction.getOpposite()), direction);
     }
 
-    @Override
-    public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, LivingEntity entity) {
-        return super.isLadder(state, level, pos, entity);
-    }
-
     private static final VoxelShape SHAPE = Block.box(1, -0.5, 12, 15, 0.5, 16);
+
     public static VoxelShape rotateShape(Direction from, Direction to, VoxelShape shape) {
         VoxelShape[] buffer = new VoxelShape[]{shape, Shapes.empty()};
 
@@ -56,9 +52,10 @@ public class MetalStepBlock extends MetalLadderBlock implements IWrenchable {
 
         return buffer[0];
     }
+
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        switch ((Direction)pState.getValue(FACING)) {
+    protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        switch (pState.getValue(FACING)) {
             case NORTH:
                 return SHAPE;
             case SOUTH:

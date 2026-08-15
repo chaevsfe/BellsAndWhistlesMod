@@ -1,19 +1,16 @@
 {
-  "type":"minecraft:crafting_shaped",
-  
+  "type": "minecraft:crafting_shaped",
   "group": "stone_pilots",
   "pattern": [
     " I ",
     "# #",
     "#I#"
   ],
-  "key":{
-    "#":{
-      "item":"create:polished_cut_tuff"
-    },
-    "I":{
-      "item":"create:polished_cut_tuff_stairs"
-    }
+  "key": {
+    "#": "create:polished_cut_tuff",
+    "I": "create:polished_cut_tuff_stairs"
   },
-  "result":{"id":"bellsandwhistles:polished_tuff_pilot"}
+  "result": {
+    "id": "bellsandwhistles:polished_tuff_pilot"
+  }
 }

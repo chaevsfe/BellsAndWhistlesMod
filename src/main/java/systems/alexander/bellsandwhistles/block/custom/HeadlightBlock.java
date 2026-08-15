@@ -15,6 +15,8 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HeadlightBlock extends FaceAttachedHorizontalDirectionalBlock {
+    public static final MapCodec<HeadlightBlock> CODEC = simpleCodec(HeadlightBlock::new);
+
     public HeadlightBlock(Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(FACE, AttachFace.WALL));
@@ -22,21 +24,24 @@ public class HeadlightBlock extends FaceAttachedHorizontalDirectionalBlock {
 
     @Override
     protected MapCodec<? extends FaceAttachedHorizontalDirectionalBlock> codec() {
-        return null;
+        return CODEC;
     }
 
-
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(FACING, FACE);
     }
 
-    public float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+    @Override
+    protected float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         return 1.0F;
     }
 
-    public boolean propagatesSkylightDown(BlockState pState, BlockGetter pReader, BlockPos pPos) {
+    @Override
+    protected boolean propagatesSkylightDown(BlockState pState) {
         return true;
     }
+
     private static final VoxelShape SHAPE = Shapes.join(Block.box(4.5, 4.5, 13, 11.5, 11.5, 16), Block.box(4, 4, 14, 12, 12, 16), BooleanOp.OR);
 
     public static VoxelShape rotateShape(Direction from, Direction to, VoxelShape shape) {
@@ -51,14 +56,15 @@ public class HeadlightBlock extends FaceAttachedHorizontalDirectionalBlock {
 
         return buffer[0];
     }
+
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+    protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         if (pState.getValue(FACE) == AttachFace.FLOOR) {
             return Shapes.join(Block.box(4.5, 0, 5, 11.5, 3, 12), Block.box(4, 0, 4.5, 12, 2, 12.5), BooleanOp.OR);
         } else if (pState.getValue(FACE) == AttachFace.CEILING) {
             return Shapes.join(Block.box(4.5, 13, 5, 11.5, 16, 12), Block.box(4, 14, 4.5, 12, 16, 12.5), BooleanOp.OR);
         } else {
-            switch ((Direction) pState.getValue(FACING)) {
+            switch (pState.getValue(FACING)) {
                 case NORTH:
                     return SHAPE;
                 case SOUTH:
