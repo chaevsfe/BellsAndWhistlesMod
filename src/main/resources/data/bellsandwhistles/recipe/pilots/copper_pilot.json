@@ -8,7 +8,7 @@
   ],
   "key": {
     "#": "create:copper_sheet",
-    "I": "create:copper_nugget"
+    "I": "minecraft:copper_nugget"
   },
   "result": {
     "id": "bellsandwhistles:copper_pilot"

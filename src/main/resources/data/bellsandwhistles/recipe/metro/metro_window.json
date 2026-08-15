@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     "bellsandwhistles:metro_casing",
-    "#c:glass"
+    "#c:glass_blocks"
   ],
   "result": {
     "id": "bellsandwhistles:metro_window",
