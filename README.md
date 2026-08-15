@@ -1,3 +1,19 @@
+<div align="center">
+  <h1>Create: Bells & Whistles — Create Fly port</h1>
+  <p>Bells & Whistles for Fabric, Minecraft 26.2, and Create Fly.</p>
+</div>
+
+This repository ports [Create: Bells & Whistles](https://github.com/aesefficio/BellsAndWhistlesMod) to the latest public version of [Create Fly](https://github.com/ZurrTum/Create-Fly) for stable Minecraft 26.2. Bells & Whistles adds decorative train and station blocks for the Create mod: grab rails, bogie steps, door steps, headlights, pilots, station platforms, and the metro block set.
+
+This is an **unofficial port**; all credit for the mod belongs to the upstream authors (lev / aesefficio). Please report issues with this port here, not upstream.
+
+Ready-to-install builds are available on the [GitHub Releases page](https://github.com/chaevsfe/BellsAndWhistlesMod/releases). Requires Fabric API and Create Fly 6.0.9-1 on Java 25.
+
+> [!IMPORTANT]
+> This build targets stable Minecraft **26.2** exactly. The `rc-2` text in the historical Create Fly artifact filename does not change its published Minecraft compatibility metadata, which targets stable 26.2.
+
+---
+
 <!-- https://github.com/alexandsr/BellsAndWhistlesMod/assets/61996958/f9f218a6-0291-4b5a-9ba0-bb7671531bc0 
 https://github.com/alexandsr/BellsAndWhistlesMod/assets/61996958/f1bca833-5df6-477f-ad89-5501e3fee29d https://github.com/alexandsr/BellsAndWhistlesMod/assets/61996958/98c3643b-d6a7-4e96-9cd5-6a8cea87ecb9 
 https://github.com/alexandsr/BellsAndWhistlesMod/assets/61996958/0cc7160d-08c8-42ff-b8f4-f8c5f0711d83 --> 
