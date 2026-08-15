@@ -74,7 +74,7 @@ public class PanelBlock extends Block {
             return InteractionResult.TRY_WITH_EMPTY_HAND;
         }
         IPlacementHelper helper = PlacementHelpers.get(placementHelperId);
-        if (helper.matchesItem(stack)) {
+        if (helper.matchesItem(stack) && helper.matchesState(state)) {
             return helper.getOffset(player, level, state, pos, hitResult)
                     .placeInWorld(level, (BlockItem) stack.getItem(), player, hand);
         }
