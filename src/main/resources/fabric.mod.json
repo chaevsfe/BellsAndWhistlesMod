@@ -6,18 +6,20 @@
   "description": "Create: Bells & Whistles port for Create Fly 26.2. Decorative train and station blocks for the Create mod.",
   "authors": [
     "lev",
+    "aesefficio",
     "chaevsfe"
   ],
   "contributors": [
     "chaevsfe"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/create-bells-whistles",
+    "homepage": "https://modrinth.com/project/uIZsYYiH",
     "sources": "https://github.com/chaevsfe/BellsAndWhistlesMod",
-    "issues": "https://github.com/chaevsfe/BellsAndWhistlesMod/issues"
+    "issues": "https://github.com/chaevsfe/BellsAndWhistlesMod/issues",
+    "upstream": "https://aesefficio.github.io/BellsAndWhistlesMod/"
   },
   "license": [
-    "GPL-3.0"
+    "GPL-3.0-or-later"
   ],
   "environment": "*",
   "entrypoints": {
@@ -32,6 +34,8 @@
     "minecraft": "${minecraft_dependency_version}",
     "fabricloader": ">=${fabric_loader_version}",
     "fabric-api": "*",
-    "create": "${create_fabric_version_range}"
-  }
+    "create": "${create_fabric_version_range}",
+    "java": ">=25"
+  },
+  "icon": "assets/bellsandwhistles/icon.png"
 }
