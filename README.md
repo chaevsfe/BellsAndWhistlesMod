@@ -28,7 +28,7 @@ Decorative detailing for trains and stations: grab rails, bogie steps, door step
 
 ```
 git clone https://github.com/chaevsfe/BellsAndWhistlesMod
-cd createaddition
+cd BellsAndWhistlesMod
 ./gradlew build
 ```
 
