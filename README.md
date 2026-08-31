@@ -21,6 +21,7 @@ Decorative detailing for trains and stations: grab rails, bogie steps, door step
 ## Download
 
 - [Modrinth](https://modrinth.com/project/uIZsYYiH)
+- [CurseForge](https://www.curseforge.com/minecraft/mc-mods/create-fly-bells-whistles)
 - [GitHub releases](https://github.com/chaevsfe/BellsAndWhistlesMod/releases)
 
 
