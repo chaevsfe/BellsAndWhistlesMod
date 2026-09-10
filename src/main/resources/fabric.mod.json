@@ -37,5 +37,9 @@
     "create": "${create_fabric_version_range}",
     "java": ">=25"
   },
+  "suggests": {
+    "createreiviewer": "*",
+    "roughlyenoughitems": "*"
+  },
   "icon": "assets/bellsandwhistles/icon.png"
 }

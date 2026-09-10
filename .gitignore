@@ -21,3 +21,6 @@ build
 eclipse
 run
 run-data
+
+# nested recipe viewer fetched by CI
+libs
