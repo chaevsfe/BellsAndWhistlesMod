@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "bellsandwhistles",
   "version": "${version}",
-  "name": "Create: Bells & Whistles",
+  "name": "Create Fly: Bells & Whistles",
   "description": "Create: Bells & Whistles port for Create Fly 26.2. Decorative train and station blocks for the Create mod.",
   "authors": [
     "lev",
