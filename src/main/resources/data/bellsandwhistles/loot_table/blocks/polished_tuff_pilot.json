@@ -10,11 +10,9 @@
           "name": "bellsandwhistles:polished_tuff_pilot"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      }
     }
   ],
   "random_sequence": "bellsandwhistles:blocks/polished_tuff_pilot"

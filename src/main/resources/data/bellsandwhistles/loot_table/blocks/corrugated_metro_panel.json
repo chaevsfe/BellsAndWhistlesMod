@@ -10,11 +10,9 @@
           "name": "bellsandwhistles:corrugated_metro_panel"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      }
     }
   ],
   "random_sequence": "bellsandwhistles:blocks/corrugated_metro_panel"

@@ -10,11 +10,9 @@
           "name": "bellsandwhistles:andesite_bogie_steps"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      }
     }
   ],
   "random_sequence": "bellsandwhistles:blocks/andesite_bogie_steps"

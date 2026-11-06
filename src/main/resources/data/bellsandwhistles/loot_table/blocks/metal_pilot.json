@@ -10,11 +10,9 @@
           "name": "bellsandwhistles:metal_pilot"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      }
     }
   ],
   "random_sequence": "bellsandwhistles:blocks/metal_pilot"

@@ -10,11 +10,9 @@
           "name": "bellsandwhistles:ornate_iron_trapdoor"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      }
     }
   ],
   "random_sequence": "bellsandwhistles:blocks/ornate_iron_trapdoor"

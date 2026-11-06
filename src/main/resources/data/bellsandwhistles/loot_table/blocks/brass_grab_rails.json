@@ -10,11 +10,9 @@
           "name": "bellsandwhistles:brass_grab_rails"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      }
     }
   ],
   "random_sequence": "bellsandwhistles:blocks/brass_grab_rails"
