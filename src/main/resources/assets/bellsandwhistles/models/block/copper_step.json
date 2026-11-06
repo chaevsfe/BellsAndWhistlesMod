@@ -74,7 +74,6 @@
         0.5,
         16
       ],
-      "shade": false,
       "rotation": {
         "angle": 0,
         "axis": "y",
@@ -121,7 +120,8 @@
           ],
           "texture": "#2"
         }
-      }
+      },
+      "shade_direction_override": "up"
     },
     {
       "name": "hoop_left",

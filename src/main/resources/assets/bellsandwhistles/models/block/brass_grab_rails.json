@@ -131,7 +131,6 @@
         16,
         16
       ],
-      "shade": false,
       "rotation": {
         "angle": 0,
         "axis": "y",
@@ -160,7 +159,8 @@
           ],
           "texture": "#0"
         }
-      }
+      },
+      "shade_direction_override": "up"
     },
     {
       "name": "ladder",
@@ -174,7 +174,6 @@
         16,
         16
       ],
-      "shade": false,
       "rotation": {
         "angle": 0,
         "axis": "y",
@@ -203,7 +202,8 @@
           ],
           "texture": "#0"
         }
-      }
+      },
+      "shade_direction_override": "up"
     },
     {
       "name": "ladder",
@@ -250,7 +250,6 @@
         16,
         14
       ],
-      "shade": false,
       "rotation": {
         "angle": 0,
         "axis": "y",
@@ -279,7 +278,8 @@
           ],
           "texture": "#0"
         }
-      }
+      },
+      "shade_direction_override": "up"
     },
     {
       "name": "ladder_backface",
