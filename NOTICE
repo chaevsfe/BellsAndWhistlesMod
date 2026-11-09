@@ -8,7 +8,7 @@ Based on Create: Bells & Whistles by lev and aesefficio, version 0.4.7.
   Upstream project: https://aesefficio.github.io/BellsAndWhistlesMod/
   This port:        https://modrinth.com/project/uIZsYYiH
 
-Modified by chaevsfe in 2026 to run on Minecraft 26.2 with the Fabric mod
+Modified by chaevsfe in 2026 to run on Minecraft 26.1 with the Fabric mod
 loader, built against Create Fly by ZurrTum rather than the original Create mod.
 
 Nature of the modifications:
@@ -16,7 +16,7 @@ Nature of the modifications:
   - block and item registration moved into Create Fly's create_plugin
     early-registration entrypoint
   - block entity serialization migrated to the ValueInput/ValueOutput API
-  - block entity rendering migrated to the Minecraft 26.2 render-state model
+  - block entity rendering migrated to the Minecraft 26.1 render-state model
   - data pack directories renamed to their 1.21.2+ singular forms
   - recipes updated for renamed conventional tags and removed Create items
   - ported from the Forge loader to Fabric
@@ -27,6 +27,13 @@ not to the upstream project.
 
 The ladder hoop textures for the andesite and brass variants were redrawn
 for this port from this mod's own copper hoop artwork.
+
+Upstream credits
+----------------
+Korean translation: AsseyGithub
+Mainland Chinese translation: avirtual777
+Asset fixes: krashd
+1.18.2 port: RenardFute
 
 Licence
 -------
